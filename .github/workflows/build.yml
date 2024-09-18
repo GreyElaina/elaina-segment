@@ -68,14 +68,17 @@ jobs:
       id-token: write
     environment: release
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
-          name: artifact
+          pattern: cibw-*
           path: dist
+          merge-multiple: true
+
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+
       - name: upload release asset
         run: |
           gh release upload ${{ github.event.release.tag_name }} dist/*

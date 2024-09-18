@@ -1,5 +1,6 @@
 from setuptools import setup, Extension
 from os import environ
+from Cython.Build import cythonize
 
 if environ.get("NO_CYTHON"):
     setup(
@@ -11,11 +12,6 @@ if environ.get("NO_CYTHON"):
     exit()
 
 setup(
-    ext_modules=(
-        [
-            Extension("elaina_segment.segment_c", ["src/elaina_segment/segment_c.c"]),
-        ]
-    ),
+    ext_modules=cythonize("src/elaina_segment/*.pyx"),
     include_package_data=True,
-    exclude_package_data={"": ["*.c"]},
 )
