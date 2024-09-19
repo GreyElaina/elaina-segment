@@ -6,7 +6,7 @@
         "depends": [],
         "name": "elaina_segment.segment_c",
         "sources": [
-            "src/elaina_segment/segment_c.pyx"
+            "elaina_segment/segment_c.pyx"
         ]
     },
     "module_name": "elaina_segment.segment_c"
@@ -1489,7 +1489,7 @@ static const char *__pyx_filename;
 
 static const char *__pyx_f[] = {
   "<stringsource>",
-  "src/elaina_segment/segment_c.pyx",
+  "elaina_segment/segment_c.pyx",
   "type.pxd",
 };
 /* #### Code section: utility_code_proto_before_types ### */
@@ -2491,11 +2491,11 @@ static const char __pyx_k_Quoted___reduce_cython[] = "Quoted.__reduce_cython__";
 static const char __pyx_k_Quoted___setstate_cython[] = "Quoted.__setstate_cython__";
 static const char __pyx_k_elaina_segment_segment_c[] = "elaina_segment.segment_c";
 static const char __pyx_k_pyx_recursive_repr_guard[] = "__pyx_recursive_repr_guard";
+static const char __pyx_k_elaina_segment_segment_c_pyx[] = "elaina_segment/segment_c.pyx";
 static const char __pyx_k_pyx_unpickle_UnmatchedQuoted[] = "__pyx_unpickle_UnmatchedQuoted";
 static const char __pyx_k_UnmatchedQuoted___reduce_cython[] = "UnmatchedQuoted.__reduce_cython__";
 static const char __pyx_k_Incompatible_checksums_0x_x_vs_0[] = "Incompatible checksums (0x%x vs (0x11b1498, 0xae34a3f, 0xbd991ce) = (ref, target, trigger))";
 static const char __pyx_k_UnmatchedQuoted___setstate_cytho[] = "UnmatchedQuoted.__setstate_cython__";
-static const char __pyx_k_src_elaina_segment_segment_c_pyx[] = "src/elaina_segment/segment_c.pyx";
 static const char __pyx_k_Incompatible_checksums_0x_x_vs_0_2[] = "Incompatible checksums (0x%x vs (0xcba8613, 0x2de5720, 0x9ca71bb) = (ref, trigger))";
 /* #### Code section: decls ### */
 static PyObject *__pyx_pf_14elaina_segment_9segment_c_6Quoted___str__(struct __pyx_obj_14elaina_segment_9segment_c_Quoted *__pyx_v_self); /* proto */
@@ -2635,6 +2635,7 @@ typedef struct {
   PyObject *__pyx_n_s_dict_2;
   PyObject *__pyx_kp_u_disable;
   PyObject *__pyx_n_s_elaina_segment_segment_c;
+  PyObject *__pyx_kp_s_elaina_segment_segment_c_pyx;
   PyObject *__pyx_kp_u_enable;
   PyObject *__pyx_n_s_eq;
   PyObject *__pyx_n_s_field;
@@ -2704,7 +2705,6 @@ typedef struct {
   PyObject *__pyx_n_s_setstate;
   PyObject *__pyx_n_s_setstate_cython;
   PyObject *__pyx_n_s_slots;
-  PyObject *__pyx_kp_s_src_elaina_segment_segment_c_pyx;
   PyObject *__pyx_n_s_state;
   PyObject *__pyx_n_s_str;
   PyObject *__pyx_kp_s_stringsource;
@@ -2842,6 +2842,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_dict_2);
   Py_CLEAR(clear_module_state->__pyx_kp_u_disable);
   Py_CLEAR(clear_module_state->__pyx_n_s_elaina_segment_segment_c);
+  Py_CLEAR(clear_module_state->__pyx_kp_s_elaina_segment_segment_c_pyx);
   Py_CLEAR(clear_module_state->__pyx_kp_u_enable);
   Py_CLEAR(clear_module_state->__pyx_n_s_eq);
   Py_CLEAR(clear_module_state->__pyx_n_s_field);
@@ -2911,7 +2912,6 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_setstate);
   Py_CLEAR(clear_module_state->__pyx_n_s_setstate_cython);
   Py_CLEAR(clear_module_state->__pyx_n_s_slots);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_src_elaina_segment_segment_c_pyx);
   Py_CLEAR(clear_module_state->__pyx_n_s_state);
   Py_CLEAR(clear_module_state->__pyx_n_s_str);
   Py_CLEAR(clear_module_state->__pyx_kp_s_stringsource);
@@ -3027,6 +3027,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_dict_2);
   Py_VISIT(traverse_module_state->__pyx_kp_u_disable);
   Py_VISIT(traverse_module_state->__pyx_n_s_elaina_segment_segment_c);
+  Py_VISIT(traverse_module_state->__pyx_kp_s_elaina_segment_segment_c_pyx);
   Py_VISIT(traverse_module_state->__pyx_kp_u_enable);
   Py_VISIT(traverse_module_state->__pyx_n_s_eq);
   Py_VISIT(traverse_module_state->__pyx_n_s_field);
@@ -3096,7 +3097,6 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_setstate);
   Py_VISIT(traverse_module_state->__pyx_n_s_setstate_cython);
   Py_VISIT(traverse_module_state->__pyx_n_s_slots);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_src_elaina_segment_segment_c_pyx);
   Py_VISIT(traverse_module_state->__pyx_n_s_state);
   Py_VISIT(traverse_module_state->__pyx_n_s_str);
   Py_VISIT(traverse_module_state->__pyx_kp_s_stringsource);
@@ -3244,6 +3244,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_dict_2 __pyx_mstate_global->__pyx_n_s_dict_2
 #define __pyx_kp_u_disable __pyx_mstate_global->__pyx_kp_u_disable
 #define __pyx_n_s_elaina_segment_segment_c __pyx_mstate_global->__pyx_n_s_elaina_segment_segment_c
+#define __pyx_kp_s_elaina_segment_segment_c_pyx __pyx_mstate_global->__pyx_kp_s_elaina_segment_segment_c_pyx
 #define __pyx_kp_u_enable __pyx_mstate_global->__pyx_kp_u_enable
 #define __pyx_n_s_eq __pyx_mstate_global->__pyx_n_s_eq
 #define __pyx_n_s_field __pyx_mstate_global->__pyx_n_s_field
@@ -3313,7 +3314,6 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_setstate __pyx_mstate_global->__pyx_n_s_setstate
 #define __pyx_n_s_setstate_cython __pyx_mstate_global->__pyx_n_s_setstate_cython
 #define __pyx_n_s_slots __pyx_mstate_global->__pyx_n_s_slots
-#define __pyx_kp_s_src_elaina_segment_segment_c_pyx __pyx_mstate_global->__pyx_kp_s_src_elaina_segment_segment_c_pyx
 #define __pyx_n_s_state __pyx_mstate_global->__pyx_n_s_state
 #define __pyx_n_s_str __pyx_mstate_global->__pyx_n_s_str
 #define __pyx_kp_s_stringsource __pyx_mstate_global->__pyx_kp_s_stringsource
@@ -10581,6 +10581,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_dict_2, __pyx_k_dict_2, sizeof(__pyx_k_dict_2), 0, 0, 1, 1},
     {&__pyx_kp_u_disable, __pyx_k_disable, sizeof(__pyx_k_disable), 0, 1, 0, 0},
     {&__pyx_n_s_elaina_segment_segment_c, __pyx_k_elaina_segment_segment_c, sizeof(__pyx_k_elaina_segment_segment_c), 0, 0, 1, 1},
+    {&__pyx_kp_s_elaina_segment_segment_c_pyx, __pyx_k_elaina_segment_segment_c_pyx, sizeof(__pyx_k_elaina_segment_segment_c_pyx), 0, 0, 1, 0},
     {&__pyx_kp_u_enable, __pyx_k_enable, sizeof(__pyx_k_enable), 0, 1, 0, 0},
     {&__pyx_n_s_eq, __pyx_k_eq, sizeof(__pyx_k_eq), 0, 0, 1, 1},
     {&__pyx_n_s_field, __pyx_k_field, sizeof(__pyx_k_field), 0, 0, 1, 1},
@@ -10650,7 +10651,6 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_setstate, __pyx_k_setstate, sizeof(__pyx_k_setstate), 0, 0, 1, 1},
     {&__pyx_n_s_setstate_cython, __pyx_k_setstate_cython, sizeof(__pyx_k_setstate_cython), 0, 0, 1, 1},
     {&__pyx_n_s_slots, __pyx_k_slots, sizeof(__pyx_k_slots), 0, 0, 1, 1},
-    {&__pyx_kp_s_src_elaina_segment_segment_c_pyx, __pyx_k_src_elaina_segment_segment_c_pyx, sizeof(__pyx_k_src_elaina_segment_segment_c_pyx), 0, 0, 1, 0},
     {&__pyx_n_s_state, __pyx_k_state, sizeof(__pyx_k_state), 0, 0, 1, 1},
     {&__pyx_n_s_str, __pyx_k_str, sizeof(__pyx_k_str), 0, 0, 1, 1},
     {&__pyx_kp_s_stringsource, __pyx_k_stringsource, sizeof(__pyx_k_stringsource), 0, 0, 1, 0},
@@ -10779,7 +10779,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__15 = PyTuple_Pack(6, __pyx_n_s_data, __pyx_n_s_res, __pyx_n_s_s, __pyx_n_s_d, __pyx_n_s_s_2, __pyx_n_s_i); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(1, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__15);
   __Pyx_GIVEREF(__pyx_tuple__15);
-  __pyx_codeobj__16 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_elaina_segment_segment_c_pyx, __pyx_n_s_build_runes, 36, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__16)) __PYX_ERR(1, 36, __pyx_L1_error)
+  __pyx_codeobj__16 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_elaina_segment_segment_c_pyx, __pyx_n_s_build_runes, 36, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__16)) __PYX_ERR(1, 36, __pyx_L1_error)
 
   /* "elaina_segment/segment_c.pyx":70
  * 
@@ -10791,7 +10791,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__17 = PyTuple_Pack(28, __pyx_n_s_seq, __pyx_n_s_until, __pyx_n_s_seq_n, __pyx_n_s_head_len, __pyx_n_s_tail_len, __pyx_n_s_until_len, __pyx_n_s_united_tail_len, __pyx_n_s_x, __pyx_n_s_y, __pyx_n_s_quoted_size, __pyx_n_s_ix, __pyx_n_s_united_tail_rune_len, __pyx_n_s_first_break_str, __pyx_n_s_first_break_obj_x, __pyx_n_s_first_break_obj_y, __pyx_n_s_tail_index, __pyx_n_s_c, __pyx_n_s_head_first, __pyx_n_s_prev, __pyx_n_s_quote, __pyx_n_s_head_is_str, __pyx_n_s_valid_until, __pyx_n_s_head_tail, __pyx_n_s_united_tail, __pyx_n_s_quoted, __pyx_n_s_united_tail_rune, __pyx_n_s_head, __pyx_n_s_tail); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(1, 70, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__17);
   __Pyx_GIVEREF(__pyx_tuple__17);
-  __pyx_codeobj__18 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 28, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__17, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_src_elaina_segment_segment_c_pyx, __pyx_n_s_segment, 70, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__18)) __PYX_ERR(1, 70, __pyx_L1_error)
+  __pyx_codeobj__18 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 28, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__17, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_elaina_segment_segment_c_pyx, __pyx_n_s_segment, 70, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__18)) __PYX_ERR(1, 70, __pyx_L1_error)
 
   /* "(tree fragment)":1
  * def __pyx_unpickle_Quoted(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<

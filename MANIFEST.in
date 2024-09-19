@@ -1,1 +1,2 @@
 include elaina_segment/*.pyx
+exclude elaina_segment/*.c
