@@ -1,17 +1,13 @@
-from setuptools import setup, Extension
-from os import environ
+from setuptools import find_packages, setup, Extension
 from Cython.Build import cythonize
 
-if environ.get("NO_CYTHON"):
-    setup(
-        package_dir={"": "src"},
-        packages=["elaina_segment"],
-        include_package_data=True,
-        exclude_package_data={"": ["*.c"]},
-    )
-    exit()
 
 setup(
-    ext_modules=cythonize("src/elaina_segment/*.pyx"),
-    include_package_data=True,
+    ext_modules=cythonize(Extension(
+        "elaina_segment.segment_c",
+        sources=["src/elaina_segment/segment_c.pyx"],
+    )),
+    include_package_data=True,  # 包含包内的数据
+    packages=find_packages(),  # 查找包
+    exclude_package_data={"": ["*.c"]},  # 排除 .c 文件
 )
