@@ -106,6 +106,9 @@ cdef class Buffer:
         Py_INCREF(<object>obj)  # Increase reference count when storing
         self.ahead.push(obj)
 
+    def first(self):
+        return self.runes[0]
+
     def __dealloc__(self):
         cdef PyObject* obj
         while self.ahead.size() > 0:

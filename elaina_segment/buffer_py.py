@@ -77,3 +77,6 @@ class Buffer(Generic[T]):
 
     def add_to_ahead(self, val: Segment[T]):
         self.ahead.appendleft(val)
+
+    def first(self) -> Runes[T]:
+        return self.runes[0]
