@@ -36,16 +36,15 @@ class Buffer(Generic[T]):
     runes: Runes[T]
     ahead: deque[Segment[T]]
 
-    def __init__(self, data: list[str | T]):
-        self.runes = build_runes(data)
+    def __init__(self, data: list[str | T], runes: bool = True):
+        self.runes = data
         self.ahead = deque()
 
-    @classmethod
-    def from_runes(cls, runes: Runes[T]):
-        ins = super().__new__(cls)
-        ins.runes = runes
-        ins.ahead = deque()
-        return ins
+        if runes:
+            self._to_runes()
+
+    def _to_runes(self):
+        self.runes = build_runes(self.runes)
 
     def __repr__(self) -> str:
         return f"Buffer({self.runes}, ahead={self.ahead})"

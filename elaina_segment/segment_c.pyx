@@ -33,7 +33,7 @@ cdef class UnmatchedQuoted:
 
 
 
-cpdef list build_runes(list data):
+cpdef inline list build_runes(list data):
     cdef:
         list res = PyList_New(<Py_ssize_t>0)
         list s = PyList_New(<Py_ssize_t>0)

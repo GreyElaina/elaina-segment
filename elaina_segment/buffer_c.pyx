@@ -57,16 +57,13 @@ cdef class Buffer:
     cdef list runes
     cdef cpp_deque[PyObject*] ahead  # Use PyObject* instead of object
 
-    def __init__(self, data):
-        self.runes = build_runes(data)
-        # self.ahead is automatically initialized; no need to assign to it
+    def __init__(self, data, runes: bool = True):
+        self.runes = data
+        if runes:
+            self._to_runes()
 
-    @classmethod
-    def from_runes(cls, list runes):
-        cdef Buffer ins = cls.__new__(cls)
-        ins.runes = runes
-        # self.ahead is automatically initialized; no need to assign to it
-        return ins
+    cdef _to_runes(self):
+        self.runes = build_runes(self.runes)
 
     def __repr__(self):
         cdef list ahead_list = []
