@@ -67,9 +67,6 @@ cdef class Buffer:
 
     def __repr__(self):
         cdef list ahead_list = []
-        cdef PyObject* obj
-        for obj in self.ahead:
-            ahead_list.append(<object>obj)
         return f"Buffer({self.runes}, ahead={ahead_list})"
 
     cpdef Buffer copy(self):
@@ -82,7 +79,7 @@ cdef class Buffer:
         cdef PyObject* obj
 
         if self.ahead.size() > 0:
-            obj = self.ahead[0]
+            obj = self.ahead.top()
             Py_INCREF(<object>obj)  # Increase reference count when accessing
             return AheadToken(self, <object>obj)
 
