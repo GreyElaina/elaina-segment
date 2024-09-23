@@ -53,6 +53,9 @@ cdef class AheadToken:
         self.buffer.ahead.pop()
         Py_DECREF(<object>obj)  # Decrease reference count when popping
 
+    def __dealloc__(self):
+        Py_DECREF(<object>self.val)  # Decrease reference count when deallocating
+
 cdef class Buffer:
     cdef list runes
     cdef cpp_stack[PyObject*] ahead  # Use PyObject* instead of object
