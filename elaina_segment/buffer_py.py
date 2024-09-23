@@ -50,10 +50,7 @@ class Buffer(Generic[T]):
         return f"Buffer({self.runes}, ahead={self.ahead})"
 
     def copy(self) -> Buffer[T]:
-        ins = super().__new__(self.__class__)
-        ins.runes = self.runes.copy()
-        ins.ahead = deque()
-        return ins
+        return Buffer(self.runes.copy(), runes=False)
 
     def next(self, until: str = SEPARATORS) -> SegmentToken[T] | AheadToken[T]:
         if self.ahead:

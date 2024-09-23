@@ -3,7 +3,7 @@
 
 from dataclasses import dataclass
 from cython cimport boundscheck, wraparound
-from libcpp.deque cimport deque as cpp_deque
+from libcpp.stack cimport stack as cpp_stack
 from cpython.ref cimport PyObject, Py_INCREF, Py_DECREF
 from . import SEPARATORS, Quoted, UnmatchedQuoted, segment
 from .segment_c cimport build_runes
@@ -19,7 +19,7 @@ cdef class SegmentToken:
     cdef object tail  # Callable[[], list] or None
 
     @property
-    def buffer(self):
+    def buffer(self) -> Buffer:
         return self.buffer
 
     @property
@@ -40,7 +40,7 @@ cdef class AheadToken:
     cdef object val
 
     @property
-    def buffer(self):
+    def buffer(self) -> Buffer:
         return self.buffer
 
     @property
@@ -49,13 +49,13 @@ cdef class AheadToken:
 
     cpdef void apply(self):
         cdef PyObject* obj
-        obj = self.buffer.ahead.front()
-        self.buffer.ahead.pop_front()
+        obj = self.buffer.ahead.top()
+        self.buffer.ahead.pop()
         Py_DECREF(<object>obj)  # Decrease reference count when popping
 
 cdef class Buffer:
     cdef list runes
-    cdef cpp_deque[PyObject*] ahead  # Use PyObject* instead of object
+    cdef cpp_stack[PyObject*] ahead  # Use PyObject* instead of object
 
     def __init__(self, data, runes: bool = True):
         self.runes = data
@@ -73,7 +73,7 @@ cdef class Buffer:
         return f"Buffer({self.runes}, ahead={ahead_list})"
 
     cpdef Buffer copy(self):
-        return Buffer.from_runes(self.runes)
+        return Buffer(self.runes, runes=False)
 
     cpdef object next(self, until=SEPARATORS):
         cdef object val
@@ -107,4 +107,4 @@ cdef class Buffer:
     cpdef void add_to_ahead(self, object val):
         cdef PyObject* obj = <PyObject*>val
         Py_INCREF(<object>obj)  # Increase reference count when storing
-        self.ahead.push_front(obj)
+        self.ahead.push(obj)
